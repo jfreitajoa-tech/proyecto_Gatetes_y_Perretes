@@ -1,0 +1,441 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap%");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+
+/* Reglas generales* (afectaran casi todos los sitios)/
+
+/*Definimos las variables de colores*/
+
+:root {
+    --text-color: rgb(23, 23, 23);
+    --primary-color: rgb(91, 73, 254);
+    --secondary-color: rgb(125, 232, 140);
+    --secondary-light-color: rgb(207, 243, 125);
+    --input-color: rgb(28, 77, 236);
+}
+
+/*Reseteo de margins y paddings*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+.title .btn-submit {
+    font-family: "Poppins", sans-serif;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 1.9;
+    margin-bottom: 0.75rem;
+}
+
+.img-fluid {
+    max-width: 100%;
+    
+}
+
+/*Las siguientes reglas afectan a los elementos con la clase container, se define un contenedor que ocupa el 100% de la pantalla del dispositivo, 
+con un relleno a la izquierday la derecha de 15px, y margenes por la izquierda y por la derecha automaticos.
+
+Se utilizan media queries, con ellas indicamos la maxima anchura del contenedor cuando los dispositivos tengan la anchura minima indicada por
+el punto de ruptura (breakpoint)*/
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media(min-width:992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media(min-width:1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media(min-width:1400px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+
+/*Bloques generales*/
+header {
+    min-height: 115px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(13, 10, 44, 0.04);
+}
+
+header .link-logo {
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+header .logo {
+    height: 50px;
+    width: auto;
+    margin-right: 5px;
+}
+
+header .menu-links li {
+    margin-right: 15px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+header .menu-links a {
+    color: black;
+}
+
+/*REVISAR*/
+header .menu-links li.active a {
+    font-weight: 700;
+}
+
+main {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+main a {
+    border-bottom: 1px dotted var(--primary-color);
+}
+
+main a:hover {
+    border-color: var(--secondary-color);
+}
+
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+    font-size: 0.9rem;
+    font-weight: 500;
+    height: 90px;
+}
+
+footer a {
+    color: white;
+}
+
+footer .legal-links {
+    margin-top: 5px;
+}
+
+footer .legal-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/*Css de la página home*/
+.page-home header {
+    background: transparent;
+    box-shadow: none;
+    position: fixed;
+    width: 100%;
+}
+
+.page-home {
+    background: linear-gradient(75deg, var(--secondary-light-color) 0%, var(--secondary-color));
+}
+
+.page-home main {
+    padding: 0;
+}
+
+.page-home .title {
+    font-size: 3.4rem;
+    margin-bottom: 15px;
+    line-height: 4rem;
+}
+
+.page-home .title span {
+    color: white;
+}
+
+.page-home .featured {
+    max-width: 470px;
+}
+
+.page-home main .container {
+    min-height: calc(100vh - 90px);
+    background: url(../images/hero_image_bg.png) 100% 100% no-repeat;
+    background-size: 700px auto;
+    padding-top: 150px;
+    padding-bottom: 120px;
+}
+
+.page-home main .featured .featured-text {
+    margin-bottom: 25px;
+}
+
+.search-bar .search-control {
+    padding-left: 45px;
+    height: 58px;
+    background: #fff url(../images/icon_search.svg) 5px 50% no-repeat;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/*Css para la pagina de camisetas (tabla)*/
+.page-tshirt header {
+    background: transparent;
+    box-shadow: none;
+    position: fixed;
+    width: 100%;
+}
+
+.page-tshirt {
+    background: linear-gradient(75deg, var(--secondary-light-color) 0%, var(--secondary-color));
+}
+
+.page-tshirt main {
+    padding: 0;
+}
+
+.page-tshirt .title {
+    font-size: 3.4rem;
+    margin-bottom: 15px;
+    line-height: 4rem;
+}
+
+.page-tshirt .title span {
+    color: white;
+}
+
+.page-tshirt .featured {
+    max-width: 470px;
+}
+
+.page-tshirt main .container {
+    min-height: calc(100vh - 90px);
+    background: url(../images/hero_image_bg.png) 100% 100% no-repeat;
+    background-size: 700px auto;
+    padding-top: 150px;
+    padding-bottom: 120px;
+}
+
+.page-tshirt main {
+    min-height: calc(100vh - 205px);
+}
+
+.table {
+    width: 100%;
+    margin: 30px;
+    border-collapse: collapse;
+}
+
+.table,
+.table th,
+.table td {
+    border: 1px solid black;
+}
+
+.table th {
+    background: var(--secondary-light-color);
+    padding: 5px 10px;
+}
+
+.table thead th {
+    text-align: center;
+}
+
+.table tbody th {
+    text-align: left;
+}
+
+.table thead th:first-child {
+    background-color: var(--secondary-color);
+}
+
+.table td {
+    background: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.table tr:nth-child(odd) td {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.table caption {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/*Css para la pagina de join*/
+
+.page-join {
+    background-color: #f9f9f9;
+}
+
+.page-join main {
+    padding-top: 140px;
+    /* deja espacio al header fijo */
+    padding-bottom: 60px;
+}
+
+/* Fieldset como tarjeta */
+.page-join .form-section {
+    border: 2px solid var(--primary-color);
+    border-radius: 2px;
+    background: #fff;
+    padding: 26px 26px 30px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.25s ease;
+}
+
+.page-join .form-section:hover {
+    box-shadow: 0 10px 22px rgba(91, 73, 254, 0.25);
+}
+
+/* Legend estilo etiqueta */
+.page-join .form-section legend {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-left: 10px;
+}
+
+/* Labels */
+.page-join .form-section label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+/* Asterisco */
+.page-join .req {
+    color: #e11d48;
+    font-weight: 700;
+}
+
+/* Inputs */
+.page-join .form-input {
+    display: block;
+    width: 100%;
+    height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    font-size: 1rem;
+}
+
+.page-join .form-input:focus {
+    border-color: var(--input-color);
+    /* azul principal */
+    box-shadow:
+        0 0 0 2px var(--input-color),
+        /* línea azul fina */
+        0 0 0 4px var(--secondary-color);
+    /* glow azul claro */
+    outline: none;
+}
+
+
+
+.page-join .form-input::placeholder {
+    color: #9ca3af;
+}
+
+.page-join .btn-submit {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 4px;
+    border-color: var(--primary-color);
+    ;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.page-join .btn-submit:hover {
+    background:  white;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.campo_obligatorio {
+    color: red;
+    margin-bottom: 12px;
+}
+
+/* Css de la pagina about */
+
+.page-about figure {
+    display: inline-block;     
+}
+
+.page-about .img-fluid {
+    display: block;          
+    max-width: 100%;
+    height: auto;
+    padding: 12px;
+    border: 4px solid #b6f25c;
+    background-color: #ffffff;
+}
+
+.page-about figcaption {
+    text-align: center;        
+    margin-top: 8px;
+}

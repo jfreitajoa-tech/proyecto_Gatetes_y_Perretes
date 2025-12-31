@@ -327,7 +327,6 @@ footer .legal-links li {
     padding-bottom: 60px;
 }
 
-/* Fieldset como tarjeta */
 .page-join .form-section {
     border: 2px solid var(--primary-color);
     border-radius: 2px;
@@ -343,7 +342,6 @@ footer .legal-links li {
     box-shadow: 0 10px 22px rgba(91, 73, 254, 0.25);
 }
 
-/* Legend estilo etiqueta */
 .page-join .form-section legend {
     background: var(--primary-color);
     color: #fff;
@@ -353,7 +351,6 @@ footer .legal-links li {
     margin-left: 10px;
 }
 
-/* Labels */
 .page-join .form-section label {
     display: block;
     margin-top: 16px;
@@ -361,13 +358,11 @@ footer .legal-links li {
     font-weight: 700;
 }
 
-/* Asterisco */
 .page-join .req {
     color: #e11d48;
     font-weight: 700;
 }
 
-/* Inputs */
 .page-join .form-input {
     display: block;
     width: 100%;
